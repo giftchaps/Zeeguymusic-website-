@@ -141,4 +141,34 @@ ${message}
     console.error('Detailed Email Error:', error)
     throw new EmailError(error instanceof Error ? error.message : 'Failed to send email', 'EMAIL_ERROR')
   }
+}
+
+export async function sendNewsletterConfirmation(email: string) {
+  if (!transporter) {
+    throw new EmailError('Email service not configured', 'CONFIG_ERROR')
+  }
+
+  try {
+    await transporter.sendMail({
+      from: process.env.SMTP_USER,
+      to: email,
+      subject: 'Welcome to Zeeguy Music Newsletter!',
+      html: `
+        <h1>Welcome to Zeeguy Music Newsletter!</h1>
+        <p>Thank you for subscribing to our newsletter. You'll now receive updates about:</p>
+        <ul>
+          <li>New music releases</li>
+          <li>Upcoming shows and tours</li>
+          <li>Exclusive content and behind-the-scenes</li>
+        </ul>
+        <p>If you didn't subscribe to our newsletter, please ignore this email.</p>
+        <p>Best regards,<br>Zeeguy Music Team</p>
+      `
+    })
+
+    return { success: true }
+  } catch (error) {
+    console.error('Newsletter confirmation email error:', error)
+    throw new EmailError('Failed to send newsletter confirmation', 'SEND_ERROR')
+  }
 } 
