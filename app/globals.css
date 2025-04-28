@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 20 30% 7%;
+    --foreground: 20 10% 98%;
+
+    --card: 20 30% 10%;
+    --card-foreground: 20 10% 98%;
+
+    --popover: 20 30% 10%;
+    --popover-foreground: 20 10% 98%;
+
+    --primary: 20 70% 48%;
+    --primary-foreground: 20 10% 98%;
+
+    --secondary: 270 100% 65%;
+    --secondary-foreground: 20 10% 98%;
+
+    --muted: 20 30% 15%;
+    --muted-foreground: 20 10% 70%;
+
+    --accent: 270 70% 65%;
+    --accent-foreground: 20 10% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 20 10% 98%;
+
+    --border: 20 30% 20%;
+    --input: 20 30% 20%;
+    --ring: 20 70% 48%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-terracotta via-brand-terracotta to-brand-terracotta/80;
+}
+
+.text-gradient-alt {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-terracotta via-brand-terracotta to-brand-terracotta/80;
+}
+
+.text-gradient-purple {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-terracotta via-brand-terracotta to-brand-terracotta/80;
+}
+
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c85c2c;
+}
+
+/* Parallax effect */
+.parallax {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.parallax-layer {
+  transform: translateZ(0);
+  transition: transform 0.5s ease-out;
+}
+
+.parallax-deep {
+  transform: translateZ(-100px) scale(1.5);
+}
+
+.parallax-medium {
+  transform: translateZ(-50px) scale(1.25);
+}
+
+.parallax-shallow {
+  transform: translateZ(-25px) scale(1.1);
+}
+
+/* Gradient border animation */
+@keyframes border-glow {
+  0%,
+  100% {
+    border-color: rgba(200, 92, 44, 0.5);
+    box-shadow: 0 0 15px rgba(200, 92, 44, 0.3);
+  }
+  50% {
+    border-color: rgba(138, 79, 255, 0.5);
+    box-shadow: 0 0 15px rgba(138, 79, 255, 0.3);
+  }
+}
+
+.animate-border-glow {
+  animation: border-glow 4s ease-in-out infinite;
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom button styles */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, rgba(200, 92, 44, 0), rgba(200, 92, 44, 0.3), rgba(200, 92, 44, 0));
+  transform: rotate(45deg);
+  animation: btn-shine 3s ease-in-out infinite;
+}
+
+@keyframes btn-shine {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+/* Sticky nav effect */
+.sticky-nav {
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sticky-nav.scrolled {
+  background-color: rgba(18, 18, 18, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-brand-terracotta;
+}
+
+.btn-brand {
+  @apply bg-brand-terracotta hover:bg-brand-terracotta/90 text-white;
+}
+
+.btn-brand-outline {
+  @apply border-brand-terracotta text-brand-terracotta hover:bg-brand-terracotta/10;
+}
