@@ -4,7 +4,7 @@ import { Mail } from "lucide-react"
 
 export default function NewsletterForm() {
   return (
-    <div className="relative text-center py-16 px-8 md:px-16 rounded-3xl bg-gradient-to-br from-brand-terracotta/30 via-black/90 to-brand-terracotta/10 border border-brand-terracotta/40 shadow-2xl overflow-hidden flex flex-col items-center">
+    <div className="relative text-center py-8 px-8 md:px-16 rounded-xl bg-gradient-to-br from-brand-terracotta/30 via-black/90 to-brand-terracotta/10 border border-brand-terracotta/40 shadow-2xl overflow-hidden flex flex-col items-center">
       {/* Large, soft background glows */}
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-brand-terracotta/20 rounded-full blur-3xl z-0" />
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-terracotta/20 rounded-full blur-3xl z-0" />
