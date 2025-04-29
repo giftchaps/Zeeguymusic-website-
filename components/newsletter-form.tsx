@@ -15,6 +15,7 @@ export default function NewsletterForm() {
       {/* Glowing, animated mail icon */}
       <div className="relative flex items-center justify-center mb-4 z-10">
         <span className="absolute w-20 h-20 rounded-full bg-brand-terracotta/30 blur-2xl animate-pulse-slow" />
+        <span className="absolute w-16 h-16 rounded-full bg-brand-terracotta/40 blur-xl animate-glow" />
         <Mail className="h-14 w-14 text-brand-terracotta animate-bounce-slow relative z-10 drop-shadow-xl" style={{ filter: 'drop-shadow(0 0 16px #e76f51cc)' }} />
       </div>
       {/* Animated, bold heading */}
@@ -34,3 +35,12 @@ export default function NewsletterForm() {
     </div>
   )
 }
+
+// Add this to your global CSS (e.g., globals.css):
+// .animate-glow {
+//   animation: glow 2s infinite alternate;
+// }
+// @keyframes glow {
+//   0% { opacity: 0.7; box-shadow: 0 0 8px #e76f51cc, 0 0 24px #e76f51cc; }
+//   100% { opacity: 1; box-shadow: 0 0 24px #e76f51cc, 0 0 48px #e76f51cc; }
+// }
