@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import { sendContactFormNotification } from "@/lib/email";
 
+// Force dynamic route to ensure this runs as a serverless function
+export const dynamic = 'force-dynamic';
+
 export async function POST(request: Request) {
   try {
     console.log('Received contact form submission request')

@@ -10,7 +10,7 @@ const nextConfig = {
     domains: ['res.cloudinary.com'],
     unoptimized: false,
   },
-  output: 'export',
+  // output: 'export',
   poweredByHeader: false,
   trailingSlash: true,
 }
