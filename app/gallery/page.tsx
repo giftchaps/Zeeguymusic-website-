@@ -75,6 +75,18 @@ export default function GalleryPage() {
     ],
     performances: [
       {
+        id: "perf-5",
+        src: "/images/zeey-stage-3.jpg",
+        alt: "Zeey performing on stage with crowd",
+        caption: "Unplugged Show, 2025",
+      },
+      {
+        id: "perf-6",
+        src: "/images/zeey-stage-4.jpg",
+        alt: "Zeey on stage with microphone and lights",
+        caption: "Encore Night, 2025",
+      },
+      {
         id: "perf-3",
         src: "/images/zeey-stage-1.jpg",
         alt: "Zeey performing on stage with microphone",
