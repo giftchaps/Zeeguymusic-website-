@@ -19,6 +19,24 @@ export default function GalleryPage() {
   const galleryImages = {
     portraits: [
       {
+        id: "portrait-7",
+        src: "/images/zeey-with-fan-1.jpg",
+        alt: "Zeey with a fan at an event",
+        caption: "Meet & greet, 2025",
+      },
+      {
+        id: "portrait-8",
+        src: "/images/zeey-with-fan-2.jpg",
+        alt: "Zeey with a fan outside venue",
+        caption: "After show, 2025",
+      },
+      {
+        id: "portrait-9",
+        src: "/images/zeey-with-artist.jpg",
+        alt: "Zeey with another artist at night",
+        caption: "Collaboration, 2025",
+      },
+      {
         id: "portrait-1",
         src: "/images/zeey-portrait-white.jpeg",
         alt: "Zeey in white t-shirt",
@@ -56,6 +74,18 @@ export default function GalleryPage() {
       },
     ],
     performances: [
+      {
+        id: "perf-3",
+        src: "/images/zeey-stage-1.jpg",
+        alt: "Zeey performing on stage with microphone",
+        caption: "Unplugged Live performance, 2025",
+      },
+      {
+        id: "perf-4",
+        src: "/images/zeey-stage-2.jpg",
+        alt: "Zeey singing on stage with lights",
+        caption: " Unplugged Concert night, 2025",
+      },
       {
         id: "perf-1",
         src: "/images/zeey-stage.png",
@@ -161,7 +191,7 @@ export default function GalleryPage() {
               {categories.map((category) => (
                 <TabsContent key={category.id} value={category.id}>
                   <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                    {galleryImages[category.id].map((image) => (
+                    {(galleryImages[category.id as keyof typeof galleryImages] as typeof galleryImages.portraits).map((image: { id: string; src: string; alt: string; caption: string }) => (
                       <div
                         key={image.id}
                         className="group relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 hover:border-brand-terracotta/50 transition-colors"
