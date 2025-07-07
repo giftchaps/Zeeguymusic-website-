@@ -13,6 +13,7 @@ export default function GalleryPage() {
     { id: "performances", label: "Performances" },
     { id: "artistic", label: "Artistic" },
     { id: "travel", label: "Travel" },
+    { id: "interviews", label: "Interviews" },
   ]
 
   // Gallery images
@@ -149,6 +150,20 @@ export default function GalleryPage() {
         src: "/images/zeey-artistic.png",
         alt: "Zeey artistic portrait",
         caption: "International Tour, 2022",
+      },
+    ],
+    interviews: [
+      {
+        id: "interview-1",
+        src: "/images/interview-star-fm.jpg",
+        alt: "The Weekend Special with ZeeyGuy on Star FM hosted by Erica Ndoro",
+        caption: "Star FM - The Weekend Special, 29th June 2025",
+      },
+      {
+        id: "interview-2",
+        src: "/images/interview-powerfm.jpg",
+        alt: "The Afternoon Delight with ZeeyGuy on Power FM hosted by Popsy",
+        caption: "Power FM - The Afternoon Delight, 22nd May 2025",
       },
     ],
   }

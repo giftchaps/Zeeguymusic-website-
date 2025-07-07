@@ -7,11 +7,15 @@ import MainNav from "@/components/main-nav"
 import Footer from "@/components/footer"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ 
+  subsets: ["latin"],
+  fallback: ['system-ui', 'arial']
+})
 const bebas = Bebas_Neue({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-bebas",
+  fallback: ['Impact', 'Arial Black', 'sans-serif']
 })
 
 export const metadata: Metadata = {
